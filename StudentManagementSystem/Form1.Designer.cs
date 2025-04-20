@@ -132,6 +132,7 @@
             this.addStudentButton.TabIndex = 3;
             this.addStudentButton.Text = "Add Student";
             this.addStudentButton.UseVisualStyleBackColor = true;
+            this.addStudentButton.Click += new System.EventHandler(this.addStudentButton_Click);
             // 
             // studentDetailButton
             // 
@@ -182,7 +183,6 @@
             // 
             // reloadButton
             // 
-            this.reloadButton.Enabled = false;
             this.reloadButton.Location = new System.Drawing.Point(136, 448);
             this.reloadButton.Name = "reloadButton";
             this.reloadButton.Size = new System.Drawing.Size(146, 43);
@@ -205,6 +205,7 @@
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.studentsDataGridView);
             this.Name = "mainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Student Management System";
             this.Load += new System.EventHandler(this.mainForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();

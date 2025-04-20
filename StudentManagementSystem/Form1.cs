@@ -31,5 +31,11 @@ namespace StudentManagementSystem
             this.studentsTableAdapter.Fill(this.studentDataSet.Students);
 
         }
+
+        private void addStudentButton_Click(object sender, EventArgs e)
+        {
+            AddStudentForm addStudentForm = new AddStudentForm();
+            addStudentForm.ShowDialog();
+        }
     }
 }
