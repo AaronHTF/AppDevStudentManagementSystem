@@ -37,5 +37,15 @@ namespace StudentManagementSystem
             AddStudentForm addStudentForm = new AddStudentForm();
             addStudentForm.ShowDialog();
         }
+
+        private void reloadButton_Click(object sender, EventArgs e)
+        {
+            this.studentsTableAdapter.Fill(this.studentDataSet.Students);
+        }
+
+        private void studentsDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            studentDetailButton.Enabled = true;
+        }
     }
 }

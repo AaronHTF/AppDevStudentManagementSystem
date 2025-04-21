@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +50,12 @@
             this.postalCodeTextBox = new System.Windows.Forms.TextBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.submitButton = new System.Windows.Forms.Button();
+            this.studentDataSet = new StudentManagementSystem.StudentDataSet();
+            this.studentsTableAdapter = new StudentManagementSystem.StudentDataSetTableAdapters.StudentsTableAdapter();
+            this.tableAdapterManager = new StudentManagementSystem.StudentDataSetTableAdapters.TableAdapterManager();
+            this.studentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -222,6 +229,24 @@
             this.submitButton.TabIndex = 20;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
+            this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
+            // 
+            // studentDataSet
+            // 
+            this.studentDataSet.DataSetName = "StudentDataSet";
+            this.studentDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // studentsTableAdapter
+            // 
+            this.studentsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CoursesTableAdapter = null;
+            this.tableAdapterManager.StudentCoursesTableAdapter = null;
+            this.tableAdapterManager.StudentsTableAdapter = this.studentsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = StudentManagementSystem.StudentDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // AddStudentForm
             // 
@@ -252,6 +277,8 @@
             this.Name = "AddStudentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student";
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,5 +307,9 @@
         private System.Windows.Forms.TextBox postalCodeTextBox;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button submitButton;
+        private StudentDataSet studentDataSet;
+        private StudentDataSetTableAdapters.StudentsTableAdapter studentsTableAdapter;
+        private StudentDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingSource studentsBindingSource;
     }
 }
